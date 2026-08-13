@@ -1,0 +1,82 @@
+{
+  "title": "Choose the visual world",
+  "question": "The build is the Build Book. Keep it, take an alternate, or re-roll.",
+  "options": [
+    {
+      "id": "build-book",
+      "label": "Build Book",
+      "kicker": "THE BUILD",
+      "lineage": "a brick build-instruction book, fused with this portfolio",
+      "thesis": "Your portfolio as an assembly manual: every project is a numbered step that snaps together on screen.",
+      "palette": [
+        "#1d9fd8",
+        "#e8442f",
+        "#ffcb05",
+        "#101418",
+        "#ffffff"
+      ],
+      "materials": [
+        "instruction-page sky blue",
+        "black keyline ink",
+        "1:1 call-out boxes",
+        "stud-module grid"
+      ],
+      "viewport": "A cover spread: builder portrait, name in oversized step numerals, one red brick snapping down onto the stud grid — the proof of the build in the first second.",
+      "risk": "Loses its voice if the assembly becomes literal toy decoration instead of a working interaction.",
+      "hero": "https://impeccable.style/worlds/cards/games-toys-physics-play-brick-build-instructions-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/games-toys-physics-play-brick-build-instructions.webp"
+    },
+    {
+      "id": "assigned-neon",
+      "label": "Jakarta Night-Market Neon",
+      "kicker": "THE ROLL",
+      "lineage": "the glow of Jakarta's roadside signboards at night",
+      "thesis": "A sign that stays open 24/7: your work as panels of living neon over rain-slick asphalt.",
+      "case": "The roll's pick — unmistakably Indonesian and fun, but a sign sells the design half only, and flicker brushes your gimmick pet-peeve.",
+      "palette": [
+        "#ff2b2b",
+        "#00e5ff",
+        "#ffd400",
+        "#0a0a0f"
+      ],
+      "materials": [
+        "neon tubing",
+        "corona glow",
+        "rain-slick asphalt"
+      ],
+      "viewport": "A dark street at night: your portrait as a sign face, each letter igniting in sequence.",
+      "risk": "Neon is the creative-studio cliché; it survives only by staying Jakarta-specific, not generic signage.",
+      "hero": "",
+      "board": ""
+    },
+    {
+      "id": "challenger-cdrom",
+      "label": "CD-ROM Console",
+      "kicker": "ALTERNATE",
+      "lineage": "a mid-nineties CD-ROM interface, a rendered machine",
+      "thesis": "The whole screen a machine with a small window playing you; navigation is pressing toggles that visibly depress.",
+      "case": "Fuses well — the console maps to the lab and the window to the portrait — but the chrome risks reading as gimmick, your stated pet-peeve.",
+      "hero": "https://impeccable.style/worlds/cards/digital-design-canon-cdrom-chrome-navigation-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/digital-design-canon-cdrom-chrome-navigation.webp"
+    },
+    {
+      "id": "challenger-scope",
+      "label": "Signal Bench",
+      "kicker": "ALTERNATE",
+      "lineage": "a CRT oscilloscope on a signal bench",
+      "thesis": "Your outputs as traces on phosphor over an etched graticule: devs identify instantly, the grid is the system.",
+      "case": "Fuses cleanly — front-end work is literally signals — but dark phosphor risks reading flat to design clients.",
+      "hero": "https://impeccable.style/worlds/cards/scientific-notation-oscilloscope-signal-bench-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/scientific-notation-oscilloscope-signal-bench.webp"
+    }
+  ],
+  "reroll": true,
+  "canon": true,
+  "canonCard": {
+    "label": "The category standard",
+    "thesis": "A clean single-page portfolio: hero, work grid, about, contact — executed at full craft.",
+    "viewport": "The arrangement a visitor expects, at full fidelity.",
+    "sketch": ""
+  },
+  "steer": true
+}

@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 3,
+  "generatedAt": "2026-08-13T00:00:00Z",
+  "title": "Design System: RULLY PANJI M.P. - Civil Works Site",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Porous Concrete",
+        "canonical": "#e9e6df",
+        "tonalRamp": ["#12110e", "#2c2a24", "#6e6a60", "#aaa59b", "#c8c4ba", "#e9e6df", "#eeebe5", "#f4f2ed"]
+      },
+      "paper-2": {
+        "role": "neutral",
+        "displayName": "Recessed Slab",
+        "canonical": "#dedacf",
+        "tonalRamp": ["#0f0e0c", "#26241e", "#5c5850", "#8f8b80", "#b4b0a6", "#ccc8bd", "#dedacf", "#e9e6df"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Builder Ink",
+        "canonical": "#1b1a17",
+        "tonalRamp": ["#050505", "#0d0c0a", "#1b1a17", "#2e2c27", "#44413b", "#5d5a52", "#7c786f", "#9e9a90"]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Ink Soft",
+        "canonical": "#55524b",
+        "tonalRamp": ["#0f0e0b", "#262318", "#3b382e", "#55524b", "#757168", "#97928a", "#b8b4ac", "#dad6cf"]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Safety Orange",
+        "canonical": "#f25c05",
+        "tonalRamp": ["#461605", "#7a2505", "#a83406", "#d04906", "#f25c05", "#ff8438", "#ffab6d", "#ffcdab"]
+      },
+      "accent-ink": {
+        "role": "primary",
+        "displayName": "Accent Ink",
+        "canonical": "#a33c00",
+        "tonalRamp": ["#331200", "#5a2000", "#7c2e00", "#a33c00", "#c65315", "#e07636", "#f39a66", "#fcc39f"]
+      },
+      "card": {
+        "role": "neutral",
+        "displayName": "Sheet Fill",
+        "canonical": "#f1eee6",
+        "tonalRamp": ["#14130f", "#2b2922", "#555145", "#8f8a7d", "#bbb6aa", "#dcd8ce", "#f1eee6", "#f8f6f1"]
+      },
+      "concrete": {
+        "role": "neutral",
+        "displayName": "Concrete Panel",
+        "canonical": "#e0dccf",
+        "tonalRamp": ["#0f0e0b", "#211e1a", "#57544a", "#8f8b80", "#b6b2a7", "#cfcbbf", "#e0dccf", "#edeadf"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero and section headlines, uppercase, Chakra Petch 700."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Prose paragraphs, Indonesian sentence case, capped max 62ch. English is annotation-only."
+      },
+      "annotation": {
+        "displayName": "Annotation",
+        "purpose": "All labels below 0.85rem: ledge names, section tags, stamps, readouts, form labels, buttons, and every English annotation. Share Tech Mono uppercase."
+      }
+    },
+    "rails": [
+      {
+        "name": "ledge-splice",
+        "value": "repeating-linear-gradient(-45deg, var(--accent) 0 7px, var(--line) 7px 14px)",
+        "purpose": "The hazard-splice rail closing each ledge beam (×5) and the footer rail. The only two placements of hazard stripes in the system."
+      }
+    ],
+    "motion": [
+      {
+        "name": "reveal-in",
+        "value": "opacity 0 -> 1, translateY(18px) -> none, .55s cubic-bezier(.2,.7,.2,1)",
+        "purpose": "Section entry reveal via IntersectionObserver on .reveal."
+      },
+      {
+        "name": "reveal-stagger",
+        "value": "same transform, .5s, nth-child delay 60ms per index",
+        "purpose": "Staggered entry for card grids and module lists."
+      },
+      {
+        "name": "modal-pop",
+        "value": "opacity 0 -> 1, translateY(12px) scale(.98) -> none, .22s cubic-bezier(.2,.7,.2,1)",
+        "purpose": "Project plate modal frame entry."
+      },
+      {
+        "name": "touch-travel",
+        "value": "card -3px/-3px hover, flush on press; button 1px/1px on :active; .12s",
+        "purpose": "Hard-state tactile feedback; the only lift mechanism, never a shadow."
+      }
+    ],
+    "breakpoints": [
+      { "name": "md", "value": "960px" },
+      { "name": "sm", "value": "720px" },
+      { "name": "xs", "value": "380px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Ledge Beam",
+      "kind": "structure",
+      "refersTo": "ledge",
+      "description": "Protruding concrete beam opening every sheet: solid ref slab (01-05) on the left, mono section name + /EN annotation, hazard-splice rail closing the right end. 2px ruling with a 4px bottom edge for beam thickness.",
+      "html": "<header class=\"ledge\"><span class=\"ledge-ref\">02</span><span class=\"ledge-name\">PROFIL <i>/ PROFILE</i></span><span class=\"ledge-splice\"></span></header>",
+      "css": ".ledge{display:flex;align-items:stretch;border:2px solid var(--line);border-bottom-width:4px;background:var(--concrete);margin-bottom:34px;min-height:46px}.ledge-ref{display:grid;place-items:center;min-width:54px;font-family:var(--font-mono);font-weight:700;color:var(--paper);background:var(--ink);border-right:2px solid var(--line)}.ledge-name{display:flex;align-items:center;gap:8px;padding:0 16px;font-family:var(--font-mono);letter-spacing:.18em;text-transform:uppercase}.ledge-name i{font-style:normal;color:var(--ink-soft)}.ledge-splice{margin-left:auto;width:96px;border-left:2px solid var(--line);background:repeating-linear-gradient(-45deg,var(--accent) 0 7px,var(--line) 7px 14px)}"
+    },
+    {
+      "name": "Wordmark",
+      "kind": "brand",
+      "refersTo": "wordmark",
+      "description": "30px ruled line mark (32px grid with an accretion diagonal) + mono-word `RULLY PANJI M.P.` with accent `M.P.`.",
+      "html": "<a class=\"wordmark\" href=\"#beranda\"><span class=\"wm-mark\"><svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\"><path d=\"M4 8h24v16H4z\"/><path d=\"M8 8l16 16M24 8L8 24\"/></svg></span><span class=\"wm-name\">RULLY PANJI <em>M.P.</em></span></a>",
+      "css": ".wordmark{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.06em;font-size:1rem}.wm-mark{width:30px;height:30px;color:var(--line)}.wm-mark svg{width:100%;height:100%}.wm-name em{color:var(--accent-ink);font-style:normal}"
+    },
+    {
+      "name": "Solid Button",
+      "kind": "button",
+      "refersTo": "button-solid",
+      "description": "Ink slab fill, paper text, 2px ruling, sharp. Hover becomes a dark accent slab. Press shifts 1px.",
+      "html": "<a class=\"btn btn-solid\" href=\"#karya\">LIHAT KARYA</a>",
+      "css": ".btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:.92rem;letter-spacing:.08em;text-transform:uppercase;padding:15px 26px;border:2px solid var(--line)}.btn-solid{background:var(--ink);color:var(--paper)}.btn-solid:hover{background:var(--accent-ink);border-color:var(--accent-ink);color:#fff}.btn:active{transform:translate(1px,1px)}"
+    },
+    {
+      "name": "Line Button",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "Transparent with ink ruling; hover fills ink and inverts.",
+      "html": "<a class=\"btn btn-line\" href=\"#kontak\">HUBUNGI</a>",
+      "css": ".btn-line{background:transparent;color:var(--ink)}.btn-line:hover{background:var(--ink);color:var(--paper)}"
+    },
+    {
+      "name": "Project Plate Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "2px-ruled sheet button: 16/11 concrete plate with a plaque reference (PL-A/B/C) + body (CONTOH / SAMPLE stamp, bilingual title, mono meta). Hover shifts -3px and shows an accent corner frame.",
+      "html": "<button class=\"card\" data-open=\"0\" aria-label=\"Identitas merek kopi lokal, studi contoh / Local coffee branding, sample study\"><span class=\"card-art\"><svg class=\"art art-coffee\" viewBox=\"0 0 320 220\">..</svg><span class=\"plaque-no mono\">PL-A</span></span><span class=\"card-body\"><span class=\"card-top mono\"><span class=\"stamp\">CONTOH / SAMPLE</span></span><span class=\"card-title\">IDENTITAS MEREK: KOPI LOKAL</span><span class=\"card-meta mono\">LOGO - KEMASAN - BRAND</span></span></button>",
+      "css": ".card{border:2px solid var(--line);display:flex;flex-direction:column;background:var(--card);text-align:left;position:relative;transition:transform .12s ease}.card:hover{transform:translate(-3px,-3px)}.card:hover::after{content:'';position:absolute;inset:0;border:2px solid var(--accent)}.card-art{aspect-ratio:16/11;display:grid;place-items:center;border-bottom:2px solid var(--line);color:var(--ink);background:var(--concrete);position:relative}.plaque-no{position:absolute;top:10px;left:10px;border:1px solid var(--line);background:var(--paper);padding:3px 7px;font-size:.68rem;color:var(--ink-soft)}.stamp{border:1.5px solid var(--accent);color:var(--accent-ink);background:var(--card);font-size:.64rem;letter-spacing:.16em;padding:2px 6px;transform:rotate(-3deg)}"
+    },
+    {
+      "name": "Spec Register",
+      "kind": "data",
+      "refersTo": "spec",
+      "description": "2px-ruled card frame, mono head strip (ink slab, paper text), dt/dd rows with 1px rulings and bilingual dt labels.",
+      "html": "<div class=\"spec\"><p class=\"spec-head mono\">REGISTER / DATA DOSSIER</p><dl class=\"spec-list\"><div class=\"spec-row\"><dt class=\"mono\">NAMA / NAME</dt><dd>Rully Panji Mustiko Pamungkas</dd></div></dl></div>",
+      "css": ".spec{border:2px solid var(--line);background:var(--card)}.spec-head{background:var(--ink);color:var(--paper);padding:11px 14px;font-size:.78rem;letter-spacing:.16em}.spec-row{display:grid;grid-template-columns:150px 1fr;gap:12px;border-bottom:1px solid var(--line-soft);padding:11px 14px;font-size:.95rem}.spec-row:last-child{border-bottom:none}.spec-row dt{color:var(--accent-ink);font-size:.74rem;letter-spacing:.12em}"
+    },
+    {
+      "name": "Plate Modal",
+      "kind": "custom",
+      "refersTo": "modal",
+      "description": "Fixed scrim + paper frame, sticky ink bar (plate reference + TUTUP [X]), 16/9 concrete plate, accent-ink mono meta, bilingual title, ID description, mono EN annotation, note stamping CONTOH / SAMPLE.",
+      "html": "<div class=\"modal\" role=\"dialog\" aria-modal=\"true\"><div class=\"modal-frame\"><div class=\"modal-bar mono\"><span>PL-A</span><button class=\"modal-close\">TUTUP [X]</button></div><div class=\"modal-body\">..</div></div></div>",
+      "css": ".modal{position:fixed;inset:0;display:grid;place-items:center;background:rgba(15,14,12,.82);padding:20px}.modal-frame{width:min(560px,100%);border:2px solid var(--line);background:var(--paper);color:var(--ink);max-height:92dvh;overflow:auto}.modal-bar{display:flex;justify-content:space-between;background:var(--ink);color:var(--paper);padding:11px 16px;position:sticky;top:0}.modal-close{font-family:var(--font-mono);border:1px solid currentColor;padding:5px 9px}"
+    },
+    {
+      "name": "Form Field",
+      "kind": "input",
+      "refersTo": "form-field",
+      "description": "Bilingual label above (mono), input ruled 1.5px on paper, focus = accent border + 4px offset shadow. Errors as mono accent bilingual lines below.",
+      "html": "<div class=\"field\"><label class=\"mono\" for=\"f-nama\">NAMA / NAME</label><input id=\"f-nama\" type=\"text\" placeholder=\"Nama lengkap / Full name\"></div>",
+      "css": ".field{display:grid;gap:7px}.field label{font-size:.74rem;letter-spacing:.14em;color:var(--ink-soft)}.field input{border:1.5px solid var(--line);background:var(--paper);padding:12px 14px}.field input:focus{outline:none;border-color:var(--accent);box-shadow:4px 4px 0 var(--accent)}.field-err{font-family:var(--font-mono);font-size:.74rem;color:var(--accent-ink)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Site That Reads",
+    "overview": "RULLY PANJI M.P. presents the portfolio as a monitored civil construction site. Each section is a structure in progress: a ledge beam carries the section identity, a hazard-splice rail closes the slab, concrete panels hold the plates, and every datum is entered into a ruled register cell. The visitor reads a construction file: a surveyor's ledger, honest sample plates stamped CONTOH, an installed-machinery report, and a work-order form, bilingual because a real field file in Indonesia is written in Bahasa Indonesia and annotated in English by the contractors who read it. Sharp lines, ruled cells, one mechanism (the ledge + register) repeated with discipline, mono annotation, and zero ornamental shadow communicate 'built by hand, standards-first' to both audiences.",
+    "keyCharacteristics": [
+      "The ledge is the section spine: a protruding concrete beam opening every sheet with a solid ref slab, mono section name, and a diagonal hazard-splice rail.",
+      "The register is the data atom: dt/dd cells, 1px row rulings, mono bilingual labels left, values right. Repeated across the DOSSIER, HIGHLIGHT GROUP, CONTACT LINES, and module tags.",
+      "Concrete panels carry the plates: hero portrait, card art, and modal art all sit on concrete fills behind 2px rulings.",
+      "Hazard splices appear exactly twice: the ledge rails and the footer rail. Safety orange stays a signal-only color, never a surface fill.",
+      "Copy is bilingual: Bahasa Indonesia is the spoken voice; English is the annotation voice on every structured label (NAMA / NAME, CONTOH / SAMPLE).",
+      "Portrait rendered grayscale 4:4.6 inside a ruled plate on a concrete panel with a hazard clip, reading as a survey datum.",
+      "All three karya tiles are schematic plates stamped CONTOH / SAMPLE and footnoted as study samples; no fabricated client work."
+    ],
+    "rules": [
+      { "name": "The One-Accent Rule", "body": "Safety orange is the only chromatic color. It appears as text only via accent-ink variants clearing 4.5:1 on their surface; the raw accent value is reserved for marks, frames, focus, hover, and hazard-splice stripes.", "section": "colors" },
+      { "name": "The Ruling Rule", "body": "Borders are the shadow system. 2px ink rulings define sheets, cards, buttons, spec cells, and ledge beams; 1px line-soft rulings separate rows inside them. No drop shadows, no glows, no inner bevels.", "section": "elevation" },
+      { "name": "The Ledge Rule", "body": "Every section opens with a ledge beam. It replaces decorative eyebrows; the ledge is the section's filing reference, a structural element, not a label.", "section": "layout" },
+      { "name": "The Hazard-Splice Limit", "body": "Diagonal accent stripes appear exactly twice per page: the ledge rails and the footer rail. A third occurrence is a violation.", "section": "materials" },
+      { "name": "The Two-Voice Rule", "body": "Chakra Petch speaks prose and headlines; Share Tech Mono annotates every label below 0.85rem and every English annotation. A readout is never set in Chakra Petch.", "section": "typography" },
+      { "name": "The Bilingual Register Rule", "body": "Structured copy is written ID + EN together (NAMA / NAME). Prose stays Indonesian; English is the recording voice rendered in mono ink-soft.", "section": "typography" },
+      { "name": "The Hard-Shape Rule", "body": "Radius is 0 for every surface, button, frame, input, ledge, and panel. The shape lock is absolute: no pills, no rounded corners, no circle avatars.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do give every section a ledge beam: ref slab + mono name + hazard-splice rail.",
+      "Do keep every surface sharp (radius 0) and border-ruled; no shadows except the form-focus stamp.",
+      "Do stamp placeholder work CONTOH / SAMPLE and explain it in a footnote; never fake client work.",
+      "Do keep the portrait grayscale and framed on concrete like a survey datum.",
+      "Do obey the one-accent rule: safety orange only as signal; use accent-ink for text.",
+      "Do write structured labels bilingually (NAMA / NAME) and keep prose in Indonesian.",
+      "Do limit hazard splices to ledge rails and the footer rail.",
+      "Do let mono own every label; let Chakra Petch own prose and headlines."
+    ],
+    "donts": [
+      "Don't round corners, add drop shadows, glows, gradients, or backdrop blur.",
+      "Don't add eyebrows as decoration; the ledge is the filing reference.",
+      "Don't repeat the register three times per sheet; a sheet gets one ledger pattern max.",
+      "Don't use em-dashes anywhere in copy; a dash is a form separator or arithmetic line.",
+      "Don't animate more than the reveal/pop pair; no marquees, no infinite loops, no parallax.",
+      "Don't double prose in English; double only the labels.",
+      "Don't let the page flip theme mid-scroll; the toggle applies the whole page once."
+    ]
+  }
+}
